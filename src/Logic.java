@@ -31,12 +31,29 @@ public class Logic {
         System.out.println("What row: ");
         row = scanner.nextInt();
 
+        if (col < 0 || col > grid.length){
+            System.out.println("Enter a valid input: ");
+            System.out.println("What column: ");
+            col = scanner.nextInt();
+        }
+
+        if (row < 0 || col > grid.length){
+            System.out.println("Enter a valid input:");
+            System.out.println("What row: ");
+            row = scanner.nextInt();
+        }
+
     }
 
     public void updatingShips(){
 
         for (int i = 0; i < grid.length - 1;i++){
             for (int j = 0; j < grid[i].length;j++){
+
+                if(row == 0){
+                    grid[grid[i][j]][grid[i-1][j]] = 'x';
+                }
+
                 if (grid[col][row] == grid[i][j]){
                     grid[i][j] = 'x';
                     for (int k = grid[col][row-1]; k <= 0; k--){

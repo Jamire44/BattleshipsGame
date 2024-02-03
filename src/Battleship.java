@@ -7,10 +7,10 @@ public class Battleship {
 
         Logic logic = new Logic();
 
-        for (int i = 0; i < numberOfShips; i++){
+        for (int i = 0; i < numberOfShips + 1; i++){
             logic.Grid();
             logic.whereShipsWantToBePlaces();
-            logic.updatingShips(); 
+            logic.updatingShips();
         }
 
     }
