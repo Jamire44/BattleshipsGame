@@ -1,8 +1,8 @@
 import java.util.Scanner;
 
-public class Logic {
+public class PlayerLogic {
 
-    public Logic() {
+    public PlayerLogic() {
 
     }
 
@@ -47,22 +47,28 @@ public class Logic {
 
     public void updatingShips(){
 
-        for (int i = 0; i < grid.length - 1;i++){
+        for (int i = 0; i < grid.length;i++){
             for (int j = 0; j < grid[i].length;j++){
-
-                if(row == 0){
-                    grid[grid[i][j]][grid[i-1][j]] = 'x';
-                }
 
                 if (grid[col][row] == grid[i][j]){
                     grid[i][j] = 'x';
-                    for (int k = grid[col][row-1]; k <= 0; k--){
+                    for (int k = grid[col][row]; k <= 0; k--){
                         grid[i][j] = 'O';
                     }
                 }
             }
         }
     }
+
+    public void promptingWithReply(int numberOfShips){
+        for (int i = 0; i < numberOfShips; i++){
+            Grid();
+            whereShipsWantToBePlaces();
+            updatingShips();
+        }
+    }
+
+
 
 
 

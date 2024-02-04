@@ -1,17 +1,17 @@
-import java.util.Scanner;
-
 public class Battleship {
     public static void main(String[] args) {
 
         final int numberOfShips = 3;
 
-        Logic logic = new Logic();
+        PlayerLogic playerLogic = new PlayerLogic();
+        ComputerLogic computerLogic = new ComputerLogic();
 
-        for (int i = 0; i < numberOfShips + 1; i++){
-            logic.Grid();
-            logic.whereShipsWantToBePlaces();
-            logic.updatingShips();
-        }
+
+//        playerLogic.promptingWithReply(numberOfShips);
+        computerLogic.computerGrid();
+        System.out.println();
+        computerLogic.updatingShips();
+        computerLogic.computerGrid();
 
     }
 }//class
