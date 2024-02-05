@@ -2,6 +2,8 @@ import java.util.Random;
 
 public class ComputerLogic {
 
+    Battleship battleship = new Battleship();
+
     char[][] grid = new char[4][4];
 
     public char[][] computerGrid(){

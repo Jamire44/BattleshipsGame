@@ -8,10 +8,15 @@ public class Battleship {
 
 
 //        playerLogic.promptingWithReply(numberOfShips);
-        computerLogic.computerGrid();
-        System.out.println();
-        computerLogic.updatingShips();
-        computerLogic.computerGrid();
+//        computerLogic.computerGrid();
+//        System.out.println();
+//        computerLogic.updatingShips();
+//        computerLogic.computerGrid();
+
+        playerLogic.Grid();
+        playerLogic.whereShipsWantToBePlaces();
+        playerLogic.updatingShips();
+        playerLogic.Grid();
 
     }
 }//class

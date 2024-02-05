@@ -7,8 +7,12 @@ public class PlayerLogic {
     }
 
     char[][] grid = new char[4][4];
-    int col;
-    int row;
+    private int col;
+    private int row;
+    private int colShot;
+    private int rowShot;
+
+    ComputerLogic computerLogic = new ComputerLogic();
 
     public char[][] Grid(){
 
@@ -25,24 +29,25 @@ public class PlayerLogic {
     public void whereShipsWantToBePlaces(){
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Where do you want to place your Ship: (Use index[0][1] for example): ");
-        System.out.println("What column: ");
-        col = scanner.nextInt();
-        System.out.println("What row: ");
-        row = scanner.nextInt();
-
-        if (col < 0 || col > grid.length){
-            System.out.println("Enter a valid input: ");
-            System.out.println("What column: ");
-            col = scanner.nextInt();
-        }
-
-        if (row < 0 || col > grid.length){
-            System.out.println("Enter a valid input:");
+        for (int i = 0; i < 3; i++) {
+            System.out.println("Where do you want to place your Ship: (Use index[0][1] for example): ");
             System.out.println("What row: ");
             row = scanner.nextInt();
-        }
+            System.out.println("What column: ");
+            col = scanner.nextInt();
 
+            if (col < 0 || col > grid.length) {
+                System.out.println("Enter a valid input: ");
+                System.out.println("What row: ");
+                row = scanner.nextInt();
+            }
+
+            if (row < 0 || row > grid.length) {
+                System.out.println("Enter a valid input:");
+                System.out.println("What col: ");
+                col = scanner.nextInt();
+            }
+        }
     }
 
     public void updatingShips(){
@@ -50,9 +55,9 @@ public class PlayerLogic {
         for (int i = 0; i < grid.length;i++){
             for (int j = 0; j < grid[i].length;j++){
 
-                if (grid[col][row] == grid[i][j]){
+                if (grid[row][col] == grid[i][j]){
                     grid[i][j] = 'x';
-                    for (int k = grid[col][row]; k <= 0; k--){
+                    for (int k = grid[row][col]; k <= 0; k--){
                         grid[i][j] = 'O';
                     }
                 }
@@ -67,8 +72,27 @@ public class PlayerLogic {
             updatingShips();
         }
     }
+    public void whereToFirePrompt() {
+        Scanner scanner = new Scanner(System.in);
 
+        System.out.println("Where do you want to place your Shot: (Use index[0][1] for example): ");
+        System.out.println("What column: ");
+        colShot = scanner.nextInt();
+        System.out.println("What row: ");
+        rowShot = scanner.nextInt();
+    }
 
+    public void ifShotHit(){
+
+        for (int i = 0; i < grid.length; i++){
+            for (int j = 0; j  < grid[i].length; j++){
+                if (grid[i][j] == 'c'){
+
+                }
+            }
+
+        }
+    }
 
 
 
